@@ -12,13 +12,21 @@ import "@fontsource-variable/noto-sans-jp";
     <meta name="generator" content={Astro.generator} />
     <title>LOG.nx</title>
   </head>
-  <body class="bg-black text-white p-8 flex flex-between">
-    <div class="flex flex-col gap-2 w-64">
-      <h1 class="text-5xl font-bold">LOG.nx</h1>
-      <p class="text-lg">JavaScriptの開発ログ</p>
+  <body class="bg-black text-white p-8 flex flex-between gap-12">
+    <div class="flex flex-col gap-8 w-64">
+      <div>
+        <a href="/" class="flex flex-col gap-2">
+          <h1 class="text-5xl font-bold">LOG.nx</h1>
+          <p class="text-lg">JavaScriptの開発ログ</p></a
+        >
+      </div>
+      <ul>
+        <li><a href="/info/">記事一覧</a></li>
+        <li></li>
+      </ul>
     </div>
-	<div class="w-full mt-2">
-		<slot />
-	</div>
+    <div class="w-full mt-2">
+      <slot />
+    </div>
   </body>
 </html>

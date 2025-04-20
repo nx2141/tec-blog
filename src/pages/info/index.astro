@@ -1,44 +1,26 @@
 ---
-export const prerender = true;
-
 import Layout from "../../layouts/Layout.astro";
-import type { MarkdownInstance } from "astro";
-
-const modules = import.meta.glob<MarkdownInstance<{
-  title: string;
-  date: string;
-  description?: string;
-}>>("../../contents/*.md", { eager: true });
-
-const posts = Object.entries(modules)
-  .map(([file, mod]) => {
-    const slug = file.split("/").at(-1)!.replace(".md", "");
-    return {
-      slug,
-      title: mod.frontmatter.title,
-      date: mod.frontmatter.date,
-      description: mod.frontmatter.description ?? "",
-    };
-  })
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+import { posts } from "../../lib/getPosts";
 ---
 
 <Layout>
-  {posts.length === 0 ? (
-    <div class="text-center mt-8">
-      <p class="text-lg">記事はありません</p>
-    </div>
-  ) : (
-    <ul>
-      {posts.map((post) => (
-        <li class="py-8 border-b border-white">
-          <a href={`/info/${post.slug}/`}>
-            <p class="text-sm">{post.date}</p>
-            <p class="text-2xl font-bold my-2">{post.title}</p>
-            {post.description && <p>{post.description}</p>}
-          </a>
-        </li>
-      ))}
-    </ul>
-  )}
+  {
+    posts.length === 0 ? (
+      <div class="text-center mt-8">
+        <p class="text-lg">記事はありません</p>
+      </div>
+    ) : (
+      <ul>
+        {posts.map((post, index) => (
+          <li class={`py-8 border-b border-white ${index === 0 && "border-t"}`}>
+            <a href={`/info/${post.slug}/`}>
+              <p class="text-sm">{post.date}</p>
+              <p class="text-2xl font-bold my-2">{post.title}</p>
+              {post.description && <p>{post.description}</p>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 </Layout>

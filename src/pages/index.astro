@@ -1,15 +1,48 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const posts = [
+  {
+    title: "タイトル1",
+    date: "2023-10-01",
+    description: "説明1",
+  },
+  {
+    title: "タイトル2",
+    date: "2023-10-02",
+    description: "説明2",
+  },
+  {
+    title: "タイトル3",
+    date: "2023-10-03",
+    description: "説明3",
+  },
+  {
+    title: "タイトル4",
+    date: "2023-10-04",
+    description: "説明4",
+  },
+  {
+    title: "タイトル5",
+    date: "2023-10-05",
+    description: "説明5",
+  },
+];
 ---
 
 <Layout>
-  <div class="py-6 px-8 gap-8 w-full flex mx-auto items-center justify-between">
-    <div class="flex flex-col gap-2">
-      <h1 class="text-5xl font-bold">LOG.nx</h1>
-      <p class="text-lg">JavaScriptの開発ログ</p>
-    </div>
-    <div class="justify-center items-center flex">
-      <div class="w-full h-full bg-amber-400 block">a</div>
-    </div>
-  </div>
+  <ul>
+    {
+      posts.map((post) => (
+        <li
+          class={`py-8 border-b border-white ${post === posts[0] && "border-top border-t"}`}
+        >
+          <p class="text-sm text-gray-500">{post.date}</p>
+
+          <p class="text-2xl font-bold my-2">{post.title}</p>
+          <p>{post.description}</p>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>

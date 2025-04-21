@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import { menuItems } from "../config/menu";
 import "../styles/globals.css";
 import "@fontsource-variable/noto-sans-jp";
@@ -13,33 +14,44 @@ import "@fontsource-variable/noto-sans-jp";
     <meta name="generator" content={Astro.generator} />
     <title>LOG.nx</title>
   </head>
-  <body class="bg-black text-white p-8 flex flex-between gap-12">
-    <div class="flex flex-col gap-8 w-64 relative">
-      <div class="md:sticky md:top-10">
-        <div class="mb-8">
-          <a href="/" class="flex flex-col gap-2">
-            <h1 class="text-5xl tracking-wide font-bold">LOG.nx</h1>
-            <p class="text-lg">JavaScriptの開発ログ</p></a
-          >
+  <body
+    class="bg-black text-white p-8 flex flex-col min-h-screen justify-between"
+  >
+    <div class="flex md:flex-row flex-col flex-between gap-12">
+      <div class="flex w-full md:flex-col gap-8 md:w-64 relative">
+        <div
+          class="flex justify-between w-full items-center md:items-start md:flex-col md:sticky"
+        >
+          <div class="md:mb-8">
+            <a href="/" class="flex items-center md:flex-col gap-2">
+              <h1 class="text-3xl md:text-5xl tracking-wide font-bold">
+                LOG.nx
+              </h1>
+              <p class="md:w-auto w-20 text-sm md:text-lg">
+                JavaScriptの開発ログ
+              </p></a
+            >
+          </div>
+          <ul class="flex gap-5 md:flex-col">
+            {
+              menuItems.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="text-lg text-gray-400 hover:text-white"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
         </div>
-        <ul class="flex space-y-3 flex-col">
-          {
-            menuItems.map((item) => (
-              <li>
-                <a
-                  href={item.href}
-                  class="text-lg text-gray-400 hover:text-white"
-                >
-                  {item.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
+      </div>
+      <div class="w-full mt-2">
+        <slot />
       </div>
     </div>
-    <div class="w-full mt-2">
-      <slot />
-    </div>
+    <Footer />
   </body>
 </html>

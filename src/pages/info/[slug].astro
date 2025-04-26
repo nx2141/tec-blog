@@ -1,17 +1,21 @@
 ---
+import H1Title from "../../components/H1Title.astro";
 import Layout from "../../layouts/Layout.astro";
 import type { MarkdownInstance } from "astro";
 
 export async function getStaticPaths() {
-  const modules = import.meta.glob<MarkdownInstance<{ title: string; date: string }>>(
-    "../../contents/*.md"
-  );
+  const modules = import.meta.glob<
+    MarkdownInstance<{ title: string; date: string }>
+  >("../../contents/*.md");
 
   const paths = await Promise.all(
     Object.keys(modules).map(async (path) => {
       const slug = path.split("/").at(-1)!.replace(".md", "");
       const module = await modules[path]();
-      return { params: { slug }, props: { frontmatter: module.frontmatter, Content: module.Content } };
+      return {
+        params: { slug },
+        props: { frontmatter: module.frontmatter, Content: module.Content },
+      };
     })
   );
 
@@ -24,7 +28,7 @@ const { frontmatter, Content } = Astro.props;
 
 <Layout>
   <article class="prose mx-auto">
-    <h1 class="text-3xl font-bold">{frontmatter.title}</h1>
+    <H1Title jaTitle={frontmatter.title} isBorderStyle={true} />
     <p class="text-sm text-gray-500 mb-6">{frontmatter.date}</p>
     <Content />
   </article>

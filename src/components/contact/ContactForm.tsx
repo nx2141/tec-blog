@@ -27,10 +27,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-5 justify-center items-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="my-4 flex flex-col gap-4 text-black"
+        className="my-4 flex flex-col gap-4 text-black max-w-md"
       >
         <div className="mb-2 flex flex-col items-center gap-4 sm:mb-0 sm:flex-row">
           <p className="flex w-full items-center gap-2 font-semibold text-white sm:w-52">
@@ -39,7 +39,7 @@ const ContactForm = () => {
           </p>
           <input
             {...register("name", { required: "お名前は必須項目です" })}
-            className="w-full rounded-md p-2 px-3"
+            className="w-full rounded-md p-2 px-3 bg-white"
           />
         </div>
         {errors.name && (
@@ -59,7 +59,7 @@ const ContactForm = () => {
                 message: "正しいメールアドレスを入力してください",
               },
             })}
-            className="w-full rounded-md p-2 px-3"
+            className="w-full rounded-md p-2 px-3 bg-white"
           />
         </div>
         {errors.mail && (
@@ -75,7 +75,7 @@ const ContactForm = () => {
             {...register("phone_number", {
               required: "電話番号は必須項目です",
             })}
-            className="w-full rounded-md p-2 px-3"
+            className="w-full rounded-md p-2 px-3 bg-white"
           />
         </div>
         {errors.phone_number && (
@@ -89,7 +89,7 @@ const ContactForm = () => {
           </p>
           <input
             {...register("budget", { required: "ご予算は必須項目です" })}
-            className="w-full rounded-md p-2 px-3"
+            className="w-full rounded-md p-2 px-3 bg-white"
           />
         </div>
         {errors.budget && (
@@ -105,7 +105,7 @@ const ContactForm = () => {
             {...register("message", {
               required: "お問い合わせ内容は必須項目です",
             })}
-            className="w-full rounded-md p-2 px-3"
+            className="w-full rounded-md p-2 px-3 bg-white"
             rows={4}
           ></textarea>
         </div>

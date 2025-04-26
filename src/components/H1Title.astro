@@ -10,7 +10,7 @@ const { enTitle, jaTitle, isBorderStyle } = Astro.props as H1TitleProps;
 
 <div>
   <h1
-    class={`text-white flex font-semibold flex-col mb-8 justify-center text-4xl ${isBorderStyle ? "border-b-2 border-gray-300 pb-8" : "items-center mt-4"}`}
+    class={`text-white flex font-semibold flex-col mb-8 justify-center text-4xl ${isBorderStyle ? "border-y border-gray-800 py-8" : "items-center mt-4"}`}
   >
     {enTitle && <span class="block text-xl mb-2">{enTitle}</span>}
     {jaTitle}

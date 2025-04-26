@@ -15,43 +15,48 @@ import "@fontsource-variable/noto-sans-jp";
     <title>LOG.nx</title>
   </head>
   <body
-    class="bg-black text-white p-8 flex flex-col min-h-screen justify-between"
+    class="bg-[#030712] text-white p-8 flex flex-col min-h-screen justify-between overflow-x-hidden"
   >
-    <div class="flex md:flex-row flex-col flex-between gap-12">
-      <div class="flex w-full md:flex-col gap-8 md:w-64 relative">
-        <div
-          class="flex justify-between w-full items-center md:items-start md:flex-col md:sticky"
-        >
-          <div class="md:mb-8">
-            <a href="/" class="flex items-center md:flex-col gap-2">
-              <h1 class="text-3xl md:text-5xl tracking-wide font-bold">
-                LOG.nx
-              </h1>
-              <p class="md:w-auto w-20 text-sm md:text-lg">
-                JavaScriptの開発ログ
-              </p></a
-            >
+    <div class="relative z-20">
+      <div class="flex md:flex-row flex-col flex-between gap-8 md:gap-12">
+        <div class="flex w-full md:flex-col gap-8 md:w-64 relative">
+          <div
+            class="flex justify-center md:justify-between w-full items-center md:items-start md:flex-col md:sticky"
+          >
+            <div class="md:mb-8">
+              <a href="/" class="flex items-center md:flex-col gap-2">
+                <h1 class="text-3xl md:text-5xl tracking-wide font-bold">
+                  LOG.nx
+                </h1>
+                <p class="md:w-auto w-20 text-sm md:text-lg">
+                  JavaScriptの開発ログ
+                </p></a
+              >
+            </div>
+            <ul class="md:flex-col hidden md:flex md:gap-5">
+              {
+                menuItems.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class="text-lg text-gray-400 hover:text-white"
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
-          <ul class="flex gap-5 md:flex-col">
-            {
-              menuItems.map((item) => (
-                <li>
-                  <a
-                    href={item.href}
-                    class="text-lg text-gray-400 hover:text-white"
-                  >
-                    {item.title}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
+        </div>
+        <div class="w-full md:mt-2">
+          <slot />
         </div>
       </div>
-      <div class="w-full mt-2">
-        <slot />
-      </div>
+      <Footer />
     </div>
-    <Footer />
+    <i
+      class="h-[600px] w-[600px] left-14 top-12 bg-white block blur-3xl absolute z-10 rounded-full opacity-5"
+    ></i>
   </body>
 </html>

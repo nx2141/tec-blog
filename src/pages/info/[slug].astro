@@ -31,14 +31,6 @@ const { frontmatter, Content } = Astro.props;
     <H1Title jaTitle={frontmatter.title} isBorderStyle={true} />
     <p class="text-sm text-gray-500 mb-6">{frontmatter.date}</p>
     <Prose>
-      <h1>試しに</h1>
-      <p>試しにコンテンツを表示してみます。</p>
-      <h2>試しに</h2>
-      <p>試しにコンテンツを表示してみます。</p>
-      <p>Markdownのコンテンツを表示してみます。</p>
-      <p>以下のように表示されます。</p>
-      <p>以下のように表示されます。</p>
-      <p>以下のように表示されます。</p>
       <Content />
     </Prose>
   </article>

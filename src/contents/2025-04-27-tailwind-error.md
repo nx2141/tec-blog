@@ -3,7 +3,7 @@ title: "tailwindcss v5 @plugin の黄色下線 errorについて【VSコード�
 date: "2025-04-27"
 ---
 
-# @plugin "@tailwindcss/typography"; errorについて
+# tailwindcss v5 @plugin の黄色下線 errorについて【VSコード】
 
 ## Errorの状況
 

@@ -18,12 +18,22 @@ Unknown at rule @plugincss(unknownAtRules)
 React v5
 tailwindcss v4
 
-## 未だ解決せず
+## エラーの原因
 
-こちらの問題はいまだ解決していませんが、globals.cssを表示している間だけエラーが表示されるため(閉じるとエラーが消える)
+こちらはglobals.cssを表示している間だけエラーが表示されるため(閉じるとエラーが消える)
 
-VSコード上で認識できないだけのエラーなのかなと思い、ひとまず放置しています。
+これはVSコード上で認識できないだけのエラーです。
 
-解決したらお知らせします。
+というわけで無視してOKです。
 
-※他のAstro 5プロジェクトでは同様の問題が出ないのですが..
+### エラーを消す方法
+
+.vscode/settings.json にこう書けば、「@plugin」や「@tailwind」みたいな未知ルールを無視するようにできます。
+
+```json
+{
+  "css.lint.unknownAtRules": "ignore"
+}
+```
+
+これでglobals.css開いても警告出なくなります。

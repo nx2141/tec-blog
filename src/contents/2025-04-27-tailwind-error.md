@@ -3,8 +3,6 @@ title: "tailwindcss v5 @plugin の黄色下線 errorについて【VSコード�
 date: "2025-04-27"
 ---
 
-# tailwindcss v5 @plugin の黄色下線 errorについて【VSコード】
-
 ## Errorの状況
 
 Astro ver.5 プロジェクトにて`@plugin "@tailwindcss/typography";` をstyles/globals.cssで呼び出したところ、

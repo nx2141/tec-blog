@@ -24,11 +24,14 @@ import "@fontsource-variable/noto-sans-jp";
             class="flex justify-center md:justify-between w-full items-center md:items-start md:flex-col md:sticky"
           >
             <div class="md:mb-8">
-              <a href="/" class="flex items-center md:flex-col gap-2">
-                <h1 class="text-3xl md:text-5xl tracking-wide font-bold">
-                  LOG.nx
+              <a
+                href="/"
+                class="flex items-center justify-center md:block flex-col gap-2"
+              >
+                <h1 class="text-4xl md:text-5xl tracking-wide font-bold">
+                  LOG<span class="text-xs">.nx</span>
                 </h1>
-                <p class="md:w-auto w-20 text-sm md:text-lg">
+                <p class="w-auto md:w-20 text-xs whitespace-nowrap md:text-md md:mt-3">
                   JavaScriptの開発ログ
                 </p></a
               >
@@ -56,7 +59,7 @@ import "@fontsource-variable/noto-sans-jp";
       <Footer />
     </div>
     <i
-      class="h-[600px] w-[600px] left-14 top-12 bg-white block blur-3xl absolute z-10 rounded-full opacity-5"
+      class="h-[300px] w-[300px] md:h-[600px] md:w-[600px] -left-10 -top-10 md:left-14 md:top-12 bg-white block blur-3xl absolute z-10 rounded-full opacity-5"
     ></i>
   </body>
 </html>

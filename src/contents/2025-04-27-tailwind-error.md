@@ -5,16 +5,18 @@ date: "2025-04-27"
 
 ## Errorの状況
 
-Astro ver.5 プロジェクトにて`@plugin "@tailwindcss/typography";` をstyles/globals.cssで呼び出したところ、
+Astro ver.5 プロジェクトにて`@plugin "@tailwindcss/typography";` をglobals.cssで呼び出したところ、
 
-@pluginの箇所にエラーが表示されました。
+@pluginの箇所に下記のエラーが表示されました。
 
 ```bash
 Unknown at rule @plugincss(unknownAtRules)
 ```
 
-React v5
-tailwindcss v4
+■ 発生した環境
+
+- React v5
+- tailwindcss v4
 
 ## エラーの原因
 

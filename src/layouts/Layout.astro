@@ -3,6 +3,7 @@ import Footer from "@/components/Footer.astro";
 import { menuItems } from "@/config/menu";
 import "../styles/globals.css";
 import "@fontsource-variable/noto-sans-jp";
+import MenuButton from "@/components/MenuButton";
 ---
 
 <!doctype html>
@@ -14,57 +15,60 @@ import "@fontsource-variable/noto-sans-jp";
     <meta name="generator" content={Astro.generator} />
     <title>LOG.nx</title>
   </head>
-  <body
-    class="bg-[#030712] text-white p-8 flex flex-col min-h-screen justify-between overflow-x-hidden"
-  >
-    <div class="relative z-20">
-      <div class="flex md:flex-row flex-col flex-between gap-8 md:gap-12">
-        <div class="flex w-full md:flex-col gap-8 md:w-64 relative">
-          <div
-            class="flex justify-center md:justify-between w-full items-center md:items-start md:flex-col md:sticky"
-          >
-            <div class="md:mb-8">
-              <a
-                href="/"
-                class="flex items-center justify-center md:block flex-col gap-2"
-              >
-                <h1 class="text-4xl md:text-5xl tracking-wide font-bold">
-                  LOG<span class="text-xs">.nx</span>
-                </h1>
-                <p
-                  class="w-auto md:w-20 text-xs whitespace-nowrap md:text-md md:mt-3"
+  <body>
+    <MenuButton client:load />
+    <div
+      class="bg-[#030712] text-white p-8 flex flex-col min-h-screen justify-between overflow-x-hidden"
+    >
+      <div class="relative z-20">
+        <div class="flex md:flex-row flex-col flex-between gap-8 md:gap-12">
+          <div class="flex w-full md:flex-col gap-8 md:w-64 relative">
+            <div
+              class="flex justify-center md:justify-between w-full items-center md:items-start md:flex-col md:sticky"
+            >
+              <div class="md:mb-8">
+                <a
+                  href="/"
+                  class="flex items-center justify-center md:block flex-col gap-2"
                 >
-                  JavaScriptの開発ログ
-                </p></a
-              >
+                  <h1 class="text-4xl md:text-5xl tracking-wide font-bold">
+                    LOG<span class="text-xs">.nx</span>
+                  </h1>
+                  <p
+                    class="w-auto md:w-20 text-xs whitespace-nowrap md:text-md md:mt-3"
+                  >
+                    JavaScriptの開発ログ
+                  </p></a
+                >
+              </div>
+              <ul class="md:flex-col hidden md:flex md:gap-5">
+                {
+                  menuItems.map((item) => (
+                    <li>
+                      <a
+                        href={item.href}
+                        class="text-lg text-gray-400 hover:text-white"
+                      >
+                        {item.title}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
             </div>
-            <ul class="md:flex-col hidden md:flex md:gap-5">
-              {
-                menuItems.map((item) => (
-                  <li>
-                    <a
-                      href={item.href}
-                      class="text-lg text-gray-400 hover:text-white"
-                    >
-                      {item.title}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
+          </div>
+          <div class="w-full md:mt-2">
+            <slot />
           </div>
         </div>
-        <div class="w-full md:mt-2">
-          <slot />
-        </div>
+        <Footer />
       </div>
-      <Footer />
+      <i
+        class="h-[300px] w-[300px] md:h-[600px] md:w-[600px] -left-30 -top-30 bg-white block blur-3xl fixed z-10 rounded-full opacity-5"
+      ></i>
+      <i
+        class="h-[200px] w-[200px] md:h-[500px] md:w-[500px] -right-30 -bottom-30 bg-white block blur-3xl fixed z-10 rounded-full opacity-5"
+      ></i>
     </div>
-    <i
-      class="h-[300px] w-[300px] md:h-[600px] md:w-[600px] -left-30 -top-30 bg-white block blur-3xl fixed z-10 rounded-full opacity-5"
-    ></i>
-    <i
-      class="h-[200px] w-[200px] md:h-[500px] md:w-[500px] -right-30 -bottom-30 bg-white block blur-3xl fixed z-10 rounded-full opacity-5"
-    ></i>
   </body>
 </html>

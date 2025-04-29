@@ -5,7 +5,7 @@ summary: Tailwind CSS の typography プラグイン (Prose) をコンポーネ�
 tags: [Tailwind CSS, Typography, Prose, Frontend, コンポーネント設計]
 ---
 
-# はじめに
+## はじめに
 
 Markdown で記事やドキュメントを書く際、**`@tailwindcss/typography`（通称 Prose）** は非常に便利です。
 
@@ -15,7 +15,7 @@ Markdown で記事やドキュメントを書く際、**`@tailwindcss/typography
 
 ---
 
-# Prose とは
+## Prose とは
 
 簡単にProseについて補足します。
 
@@ -29,7 +29,7 @@ Markdown で記事やドキュメントを書く際、**`@tailwindcss/typography
 
 ---
 
-# スタイリングを管理する 2 つのアプローチ
+## スタイリングを管理する 2 つのアプローチ
 
 | 方式 | 概要 | 主なメリット | 主なデメリット |
 |------|------|--------------|----------------|
@@ -40,7 +40,7 @@ Markdown で記事やドキュメントを書く際、**`@tailwindcss/typography
 
 ---
 
-# コンポーネント化を推す 5 つの理由
+## コンポーネント化を推す 5 つの理由
 
 1. **一貫性** – 記事本文のデザインを 1 箇所で集中管理  
 2. **拡張性** – `ProseCompact`, `ProseWide` などバリエーションを簡単に追加  
@@ -50,9 +50,9 @@ Markdown で記事やドキュメントを書く際、**`@tailwindcss/typography
 
 ---
 
-# 実装パターン
+## 実装パターン
 
-## Astro 版
+### Astro 版
 
 ```astro
 ---
@@ -83,7 +83,7 @@ const merged = twMerge(base, className);
 </Prose>
 ```
 
-## Next.js (React) 版
+### Next.js (React) 版
 
 ```tsx
 // components/Prose.tsx
@@ -108,7 +108,7 @@ export function Prose({ children, className = '' }: ProseProps) {
 
 ---
 
-# tailwind‑merge でクラスを安全にマージ
+## tailwind‑merge でクラスを安全にマージ
 
 twMergeを使って安全にクラスをマージします。
 
@@ -122,7 +122,7 @@ twMerge('flex flex-col', props.className);
 
 ---
 
-# グローバル上書きは「最低限」にとどめる
+## グローバル上書きは「最低限」にとどめる
 
 ```ts
 // tailwind.config.ts
@@ -143,7 +143,7 @@ extend: {
 
 ---
 
-# まとめ
+## まとめ
 
 1. **共通の骨格** → `tailwind.config.ts` に集約  
 2. **記事単位の調整** → `<Prose>` コンポーネントで上書き  
@@ -153,7 +153,7 @@ extend: {
 
 ---
 
-# 参考リンク
+## 参考リンク
 
 - [@tailwindcss/typography GitHub](https://github.com/tailwindlabs/tailwindcss-typography)
 - [tailwind‑merge](https://github.com/dcastil/tailwind-merge)

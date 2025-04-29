@@ -2,10 +2,10 @@
 type H1TitleProps = {
   enTitle?: string;
   jaTitle: string;
-  className?: string;
+  class?: string;
 };
 import { twMerge } from "tailwind-merge";
-const { enTitle, jaTitle, className } = Astro.props as H1TitleProps;
+const { enTitle, jaTitle, class: className } = Astro.props as H1TitleProps;
 ---
 
 <div>

@@ -1,9 +1,15 @@
 ---
 import H1Title from "../../components/H1Title.astro";
+import H2Title from "../../components/H2title.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
   <H1Title enTitle="About" jaTitle="LOG.nxについて" isBorderStyle />
-  <p>about</p>
+  <H2Title jaTitle="LOG.nxとは" />
+  <p class="text-gray-400 mb-8">
+    LOG.nxは、JavaScriptの開発ログを記録するためのブログです。
+    <br />
+    JavaScriptに関する情報を中心に、学んだことや気づいたことを記録しています。
+  </p>
 </Layout>

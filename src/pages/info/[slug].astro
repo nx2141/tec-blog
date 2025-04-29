@@ -28,7 +28,7 @@ const { frontmatter, Content } = Astro.props;
 
 <Layout>
   <article class="mx-auto">
-    <H1Title jaTitle={frontmatter.title} isBorderStyle={true} />
+    <H1Title jaTitle={frontmatter.title}={true} />
     <p class="text-sm text-gray-500 mb-6">{frontmatter.date}</p>
     <Prose>
       <Content />

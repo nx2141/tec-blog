@@ -5,7 +5,7 @@ import { posts } from "../../lib/getPosts";
 ---
 
 <Layout>
-  <H1Title enTitle="Blog" jaTitle="Blog一覧" isBorderStyle />
+  <H1Title enTitle="Blog" jaTitle="Blog一覧" className="mb-0" />
   {
     posts.length === 0 ? (
       <div class="text-center mt-8">
@@ -13,8 +13,8 @@ import { posts } from "../../lib/getPosts";
       </div>
     ) : (
       <ul>
-        {posts.map((post, index) => (
-          <li class={`py-8 border-b border-white ${index === 0 && "border-t"}`}>
+        {posts.map((post) => (
+          <li class={`py-8 border-b border-gray-800`}>
             <a href={`/info/${post.slug}/`}>
               <p class="text-sm">{post.date}</p>
               <p class="text-2xl font-bold my-2">{post.title}</p>

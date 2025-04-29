@@ -2,15 +2,18 @@
 type H1TitleProps = {
   enTitle?: string;
   jaTitle: string;
-  isBorderStyle?: boolean;
+  className?: string;
 };
-
-const { enTitle, jaTitle, isBorderStyle } = Astro.props as H1TitleProps;
+import { twMerge } from "tailwind-merge";
+const { enTitle, jaTitle, className } = Astro.props as H1TitleProps;
 ---
 
 <div>
   <h1
-    class={`text-white flex font-semibold flex-col mb-8 justify-center text-4xl ${isBorderStyle ? "border-y border-gray-800 py-8" : "items-center mt-4"}`}
+    class={twMerge(
+      "text-white flex font-semibold flex-col mb-8 justify-center text-4xl border-y border-gray-800 py-8",
+      className
+    )}
   >
     {enTitle && <span class="block text-xl mb-2">{enTitle}</span>}
     {jaTitle}

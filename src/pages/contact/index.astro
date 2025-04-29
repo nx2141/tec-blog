@@ -2,9 +2,16 @@
 import Layout from "../../layouts/Layout.astro";
 import ContactForm from "../../components/contact/ContactForm.tsx";
 import H1Title from "../../components/H1Title.astro";
+import Prose from "../../components/Prose.astro";
 ---
 
 <Layout>
-  <H1Title enTitle="Contact" jaTitle="お問い合わせ" isBorderStyle />
-  <ContactForm />
+  <H1Title enTitle="Contact" jaTitle="お問い合わせ" />
+  <Prose>
+    <p>
+      ご意見・ご感想などがありましたら、以下のフォームからお問い合わせください。
+    </p>
+    <p>お返事はできない場合がありますので、ご了承ください。</p>
+    <ContactForm />
+  </Prose>
 </Layout>

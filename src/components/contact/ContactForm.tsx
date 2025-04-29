@@ -27,7 +27,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5 justify-center items-center">
+    <div className="flex flex-col gap-5">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="my-4 flex flex-col gap-4 md:gap-8 text-black max-w-2xl w-full"

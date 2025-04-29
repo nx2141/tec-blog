@@ -1,9 +1,11 @@
 ---
+import H1Title from "../../components/H1Title.astro";
 import Layout from "../../layouts/Layout.astro";
 import { posts } from "../../lib/getPosts";
 ---
 
 <Layout>
+  <H1Title enTitle="Blog" jaTitle="Blog一覧" isBorderStyle />
   {
     posts.length === 0 ? (
       <div class="text-center mt-8">

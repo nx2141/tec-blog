@@ -17,6 +17,10 @@ export const menuItems: MenuItem[] = [
     href: "/about",
   },
   {
+    title: "Gallery",
+    href: "/gallery",
+  },
+  {
     title: "Contact",
     href: "/contact",
   },

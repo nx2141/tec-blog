@@ -1,0 +1,20 @@
+---
+import { twMerge } from "tailwind-merge";
+type ButtonProps = {
+  href?: string;
+  isBlank?: boolean;
+  className?: string;
+};
+const { href, isBlank, className } = Astro.props as ButtonProps;
+---
+
+<p
+  class={twMerge(
+    "my-8 w-32 rounded-full bg-cyan-600 px-5 py-3 text-center text-white hover:cursor-pointer hover:bg-cyan-400",
+    className || ""
+  )}
+>
+  <a href={href} target={isBlank ? "_blank" : undefined}>
+    <slot />
+  </a>
+</p>

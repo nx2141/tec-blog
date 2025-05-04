@@ -1,6 +1,5 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { fetchCsrfToken, submitContactForm } from "./ContactApi";
-import { useNavigate } from "react-router-dom";
 
 type Inputs = {
   name: string;
@@ -11,8 +10,6 @@ type Inputs = {
 };
 
 const ContactForm = () => {
-  const navigate = useNavigate();
-
   const {
     register,
     handleSubmit,
@@ -23,7 +20,7 @@ const ContactForm = () => {
     try {
       const csrfToken = await fetchCsrfToken();
       await submitContactForm(data, csrfToken);
-      navigate("/contact/thanks");
+      window.location.href = "/contact/thanks";
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("予約の送信に失敗しました。");

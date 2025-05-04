@@ -1,0 +1,20 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ContactForm from "@/components/contact/ContactForm.tsx";
+import H1Title from "@/components/H1Title.astro";
+import Prose from "@/components/Prose.astro";
+import Button from "@/components/ui/Button.astro";
+---
+
+<Layout>
+  <H1Title enTitle="Contact" jaTitle="送信完了" />
+  <Prose>
+    <p>送信完了しました。</p>
+    <p class="mt-3">
+      順次ご対応させていただきますので、
+      <br />
+      今しばらくお待ち下さい。
+    </p>
+  </Prose>
+  <Button href="/">TOP</Button>
+</Layout>

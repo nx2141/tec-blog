@@ -27,8 +27,10 @@ const MenuButton = () => {
                   key={index}
                   className="flex items-center justify-start gap-2 p-2 hover:bg-gray-200 rounded-md cursor-pointer text-lg"
                 >
-                  <ChevronRight size={15} strokeWidth={1} />
-                  <span>{item.title}</span>
+                  <a href={item.href}>
+                    <ChevronRight size={15} strokeWidth={1} />
+                    <span>{item.title}</span>
+                  </a>
                 </div>
               ))}
             </SheetDescription>

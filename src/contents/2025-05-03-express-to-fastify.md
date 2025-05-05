@@ -1,6 +1,8 @@
 ---
 title: "現代はExpressよりFastifyがバックエンドフレームワークの現代的な選択"
 date:  "2025-05-03"
+description: "Express の普及度と Fastify の現代的な利点を比較。高速・型安全・拡張性を持つ Fastify の魅力と、Hono を含む今後の選択肢について考察します。"
+tags: ["Node.js", "Express", "Fastify", "Hono", "API", "バックエンド", "Web 開発", "JavaScript"]
 ---
 
 ## はじめに

@@ -1,6 +1,8 @@
 ---
 title: "tailwindcss v5 @plugin の黄色下線 errorについて【VSコード】"
 date: "2025-04-27"
+description: "Tailwind CSS v5 における @plugin ディレクティブに対する VSCode の警告エラーの対処法を紹介します。誤検出であるため無視可能ですが、設定で警告を非表示にする方法も解説します。"
+tags: ["Tailwind CSS", "VSCode", "Astro", "React", "CSSエラー", "Web 開発", "フロントエンド"]
 ---
 
 ## Errorの状況

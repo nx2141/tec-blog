@@ -1,7 +1,7 @@
 ---
 title: "TailwindでProseはコンポーネントに分けると良き"
 date: "2025-04-30"
-summary: Tailwind CSS の typography プラグイン (Prose) をコンポーネント化する理由と、Astro / Next.js での実装手順を詳しく解説します。
+description: Tailwind CSS の typography プラグイン (Prose) をコンポーネント化する理由と、Astro / Next.js での実装手順を詳しく解説します。
 tags: [Tailwind CSS, Typography, Prose, Frontend, コンポーネント設計]
 ---
 

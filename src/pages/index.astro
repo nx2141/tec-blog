@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { posts } from "@/lib/getPosts";
+import { Clock as ClockIcon } from "lucide-react";
 ---
 
 <Layout>
@@ -16,9 +17,13 @@ import { posts } from "@/lib/getPosts";
             class={`py-8 border-b border-gray-800 ${index === 0 && "border-t"}`}
           >
             <a href={`/info/${post.slug}/`}>
-              <p class="text-sm">{post.date}</p>
+              <p class="text-sm text-gray-500 flex items-center">
+                <ClockIcon size={15} strokeWidth={1} className="mr-1" />{post.date}
+              </p>
               <p class="text-2xl font-bold my-2">{post.title}</p>
-              {post.description && <p>{post.description}</p>}
+              {post.description && (
+                <p class=" text-gray-400">{post.description}</p>
+              )}
             </a>
           </li>
         ))}

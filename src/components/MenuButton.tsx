@@ -23,11 +23,11 @@ const MenuButton = () => {
             <SheetTitle className="text-2xl p-3">Menu</SheetTitle>
             <SheetDescription>
               {menuItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-start gap-2 p-2 hover:bg-gray-200 rounded-md cursor-pointer text-lg"
-                >
-                  <a href={item.href}>
+                <div key={index}>
+                  <a
+                    href={item.href}
+                    className="flex items-center justify-start gap-2 p-2 hover:bg-gray-200 rounded-md cursor-pointer text-lg"
+                  >
                     <ChevronRight size={15} strokeWidth={1} />
                     <span>{item.title}</span>
                   </a>

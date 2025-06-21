@@ -1,17 +1,8 @@
 ---
-
+import Image from "astro/components/Image.astro";
+import profileImage from "@/assets/m2.png";
 ---
 
-<div
-  class="w-full flex justify-center flex-col items-start gap-1 pt-8 font-mono text-gray-400 border-t border-gray-800 mt-8 text-sm"
->
-  <p class="opacity-50">{`{`}</p>
-  <p class="ml-2">"profile": {`{`}</p>
-  <p class="ml-4">"name": "Makoto",</p>
-  <p class="ml-4">"birth": "1989",</p>
-  <p class="ml-4">"job": "fe-dev"</p>
-  <p class="ml-4">"location": "Hiroshima",</p>
-  <p class="ml-4">"favorite": "React"</p>
-  <p class="ml-2">{`}`}</p>
-  <p class="opacity-50">{`}`}</p>
+<div class="flex justify-center items-center my-20">
+  <Image src={profileImage} alt="Profile" class="w-full h-auto max-w-44 mx-auto" />
 </div>

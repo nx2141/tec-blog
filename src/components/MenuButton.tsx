@@ -18,15 +18,17 @@ const MenuButton = () => {
             <MenuIcon size={20} strokeWidth={1} />
           </div>
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent className="bg-[#030712] border-0 shadow-2xl text-white">
           <SheetHeader>
-            <SheetTitle className="text-2xl p-3">Menu</SheetTitle>
+            <SheetTitle className="text-2xl p-3 text-white mb-4">
+              Menu
+            </SheetTitle>
             <SheetDescription>
               {menuItems.map((item, index) => (
                 <div key={index}>
                   <a
                     href={item.href}
-                    className="flex items-center justify-start gap-2 p-2 hover:bg-gray-200 rounded-md cursor-pointer text-lg"
+                    className="flex items-center justify-start gap-2 p-2 hover:text-gray-600 rounded-md cursor-pointer text-lg text-white"
                   >
                     <ChevronRight size={15} strokeWidth={1} />
                     <span>{item.title}</span>

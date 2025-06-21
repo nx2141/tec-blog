@@ -42,13 +42,13 @@ import Profile from "@/components/Profile.astro";
                   </p></a
                 >
               </div>
-              <ul class="md:flex-col hidden md:flex md:gap-5">
+              <ul class="md:flex-col hidden md:flex w-full">
                 {
                   menuItems.map((item) => (
                     <li>
                       <a
                         href={item.href}
-                        class="text-lg text-gray-400 hover:text-white"
+                        class="text-lg text-gray-400 hover:text-white py-5 border-b border-gray-800 w-full block"
                       >
                         {item.title}
                       </a>

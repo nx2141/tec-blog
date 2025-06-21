@@ -14,6 +14,7 @@
     "@fontsource-variable/noto-sans-jp": "^5.2.5",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-dialog": "^1.1.11",
+    "@supabase/ssr": "^0.6.1",
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",

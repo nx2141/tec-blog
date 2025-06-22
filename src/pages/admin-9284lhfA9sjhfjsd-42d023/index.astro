@@ -1,0 +1,13 @@
+---
+import H1Title from "@/components/H1Title.astro";
+import Prose from "@/components/Prose.astro";
+import Layout from "@/layouts/Layout.astro";
+import AdminLogin from "@/components/admin/Login";
+---
+
+<Layout>
+  <H1Title jaTitle="ログイン" />
+  <Prose>
+    <AdminLogin client:visible />
+  </Prose>
+</Layout>

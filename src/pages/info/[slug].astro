@@ -1,4 +1,5 @@
 ---
+import FeedbackButtons from "@/components/FeedbackButtons";
 import H1Title from "@/components/H1Title.astro";
 import Prose from "@/components/Prose.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -28,10 +29,11 @@ const { frontmatter, Content } = Astro.props;
 
 <Layout>
   <article class="mx-auto">
-    <H1Title jaTitle={frontmatter.title}={true} />
+    <H1Title jaTitle={frontmatter.title} />
     <p class="text-sm text-gray-500 mb-6">{frontmatter.date}</p>
     <Prose>
       <Content />
     </Prose>
+    <FeedbackButtons pageId={Astro.params.slug} />
   </article>
 </Layout>

@@ -1,0 +1,13 @@
+---
+import H1Title from "@/components/H1Title.astro";
+import Prose from "@/components/Prose.astro";
+import Layout from "@/layouts/Layout.astro";
+import GetPostFeedback from "@/components/admin/GetPostFeedback.tsx";
+---
+
+<Layout>
+  <H1Title enTitle="Admin" jaTitle="管理者ページ" />
+  <Prose>
+    <GetPostFeedback client:visible />
+  </Prose>
+</Layout>

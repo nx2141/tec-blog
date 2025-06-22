@@ -2,7 +2,7 @@
 ---
 title: "Docker Desktopで謎のゴーストコンテナが増殖？原因と即効性のある解決法"
 description: "Windows環境のDocker Desktopでよく起こるゴーストコンテナ問題と、そのシンプルかつ本質的な対処法を詳しく解説します。"
-date: 2025-06-22
+date: "2025-06-22"
 tags: ["Docker", "Windows", "Docker Desktop", "トラブルシューティング", "開発環境"]
 ---
 

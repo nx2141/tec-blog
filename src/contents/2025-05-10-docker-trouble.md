@@ -1,7 +1,7 @@
 ---
 title: "Win11環境でWSL/Dockerが動かない 0x80370102"
 description: "WSL2 の 0x80370102／Hyper‑V 起動失敗から黒画面、最終的なクリーンインストールと Docker 復活までの全手順を時系列でまとめました。再発防止のコツも付属。"
-date: 2025-05-10
+date: "2025-05-10"
 tags: ["Windows11", "WSL2", "Docker", "Hyper-V", "Troubleshooting"]
 ---
 

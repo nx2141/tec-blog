@@ -1,4 +1,7 @@
 -- フィードバックテーブル
+
+CREATE TYPE feedback_type AS ENUM ('like', 'dislike', 'neutral');
+
 CREATE TABLE feed_backs (
   id SERIAL PRIMARY KEY,
   user_id UUID,
@@ -9,5 +12,3 @@ CREATE TABLE feed_backs (
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now()
 );
-
-CREATE TYPE feedback_type AS ENUM ('like', 'dislike', 'neutral');

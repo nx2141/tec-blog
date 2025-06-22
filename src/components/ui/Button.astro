@@ -5,12 +5,12 @@ type ButtonProps = {
   isBlank?: boolean;
   className?: string;
 };
-const { href, isBlank, className } = Astro.props as ButtonProps;
+const { href = "/", isBlank, className } = Astro.props as ButtonProps;
 ---
 
 <p
   class={twMerge(
-    "my-8 w-32 rounded-full bg-cyan-600 px-5 py-3 text-center text-white hover:cursor-pointer hover:bg-cyan-400",
+    "mb-8 mt-16 w-32 rounded-full border px-5 py-3 text-center text-white hover:cursor-pointer mx-auto",
     className || ""
   )}
 >

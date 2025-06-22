@@ -27,26 +27,27 @@ export default function FeedbackButtons({ pageId }: Props) {
       }
     }
 
-    const { error } = await supabase.functions.invoke("submit-feedback", {
-      body: {
-        page_id: pageId,
-        feedback_type: type,
-        user_id: userId,
-        anonymous_user_id: anonymousUserId,
-      },
-    });
+    const payload: Record<string, any> = {
+      page_id: pageId,
+      feedback_type: type,
+    };
+    if (userId) payload.user_id = userId;
+    if (anonymousUserId) payload.anonymous_user_id = anonymousUserId;
+
+    // もう upsert ではなく insert だけ
+    const { error } = await supabase.from("feed_backs").insert(payload);
 
     if (!error) setSelected(type);
     setLoading(null);
   };
 
   const btnStyle = (t: string) =>
-    `px-4 py-2 rounded border ${selected === t ? "bg-gray-900 text-white" : "bg-white"} ${
-      loading === t ? "opacity-50 pointer-events-none" : ""
-    }`;
+    `px-4 py-2 rounded border hover:cursor-pointer border-slate-600 hover:opacity-50 ${
+      selected === t ? "opacity-50 text-white" : ""
+    } ${loading === t ? "opacity-50 pointer-events-none" : ""}`;
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 mt-12">
       <button className={btnStyle("like")} onClick={() => handleClick("like")}>
         👍 Like
       </button>

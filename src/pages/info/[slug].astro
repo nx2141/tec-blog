@@ -2,6 +2,7 @@
 import FeedbackButtons from "@/components/FeedbackButtons";
 import H1Title from "@/components/H1Title.astro";
 import Prose from "@/components/Prose.astro";
+import Button from "@/components/ui/Button.astro";
 import Layout from "@/layouts/Layout.astro";
 import type { MarkdownInstance } from "astro";
 
@@ -34,6 +35,7 @@ const { frontmatter, Content } = Astro.props;
     <Prose>
       <Content />
     </Prose>
-    <FeedbackButtons pageId={Astro.params.slug} />
+    <FeedbackButtons pageId={Astro.params.slug} client:visible />
+    <Button>TOP</Button>
   </article>
 </Layout>

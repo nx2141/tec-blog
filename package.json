@@ -26,6 +26,7 @@
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
+    "js-cookie": "^3.0.5",
     "lint-staged": "^15.5.0",
     "lucide-astro": "^0.501.0",
     "lucide-react": "^0.503.0",

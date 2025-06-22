@@ -46,32 +46,34 @@ const GetPostFeedback = () => {
   return (
     <div>
       <h2>Feedback 全件一覧</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>User ID</th>
-            <th>Page ID</th>
-            <th>Feedback Type</th>
-            <th>Created At</th>
-          </tr>
-        </thead>
-        <tbody>
-          {feedbacks.map((fb) => (
-            <tr key={fb.id}>
-              <td>{fb.id}</td>
-              <td>
-                {fb.anonymous_user_id
-                  ? trimTxt(fb.anonymous_user_id)
-                  : fb.user_id}
-              </td>
-              <td>{fb.page_id}</td>
-              <td>{renderEmoji(fb.feedback_type)}</td>
-              <td>{new Date(fb.created_at).toLocaleString()}</td>
+      <div style={{ overflowX: "auto" }}>
+        <table cellPadding="8" style={{ minWidth: "600px" }}>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User ID</th>
+              <th>Page ID</th>
+              <th>Feedback Type</th>
+              <th>Created At</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {feedbacks.map((fb) => (
+              <tr key={fb.id}>
+                <td>{fb.id}</td>
+                <td>
+                  {fb.anonymous_user_id
+                    ? trimTxt(fb.anonymous_user_id)
+                    : fb.user_id}
+                </td>
+                <td>{fb.page_id}</td>
+                <td>{renderEmoji(fb.feedback_type)}</td>
+                <td>{new Date(fb.created_at).toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

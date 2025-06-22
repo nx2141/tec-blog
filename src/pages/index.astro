@@ -14,7 +14,7 @@ import { Clock as ClockIcon } from "lucide-react";
       <ul>
         {posts.map((post, index) => (
           <li
-            class={`py-8 border-b border-gray-800 ${index === 0 && "border-t"}`}
+            class={`pb-6 border-b border-gray-800 ${index === 0 ? "" : "border-t pt-6"}`}
           >
             <a href={`/info/${post.slug}/`}>
               <p class="text-sm text-gray-500 flex items-center">
